@@ -1,0 +1,27 @@
+﻿Build started 17/02/2019 11:38:09 AM.
+     1>Project "C:\Users\Marc\source\repos\SoftwareRenderer\SoftwareRenderer\SoftwareRenderer.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\SoftwareRenderer.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\CL.exe /c /I"C:\Program Files (x86)\OpenGLWrappers\glew32-2.1.0\include" /I"C:\Program Files (x86)\OpenGLWrappers\glfw-3.2.1\include" /ZI /JMC /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++14 /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\marc\source\repos\softwarerenderer\softwarerenderer\main.cpp(27): warning C4326: return type of 'main' should be 'int' instead of 'void'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Marc\source\repos\SoftwareRenderer\Debug\SoftwareRenderer.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\OpenGLWrappers\glew32-2.1.0\lib\Release\Win32" /LIBPATH:"C:\Program Files (x86)\OpenGLWrappers\glfw-3.2.1\lib-vc2015" glfw3.lib OpenGL32.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\Marc\source\repos\SoftwareRenderer\Debug\SoftwareRenderer.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Marc\source\repos\SoftwareRenderer\Debug\SoftwareRenderer.lib" /MACHINE:X86 Debug\Canvas.obj
+         Debug\main.obj
+         SoftwareRenderer.vcxproj -> C:\Users\Marc\source\repos\SoftwareRenderer\Debug\SoftwareRenderer.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\SoftwareRenderer.tlog\unsuccessfulbuild".
+         Touching "Debug\SoftwareRenderer.tlog\SoftwareRenderer.lastbuildstate".
+     1>Done Building Project "C:\Users\Marc\source\repos\SoftwareRenderer\SoftwareRenderer\SoftwareRenderer.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+       "C:\Users\Marc\source\repos\SoftwareRenderer\SoftwareRenderer\SoftwareRenderer.vcxproj" (Build target) (1) ->
+       (ClCompile target) -> 
+         c:\users\marc\source\repos\softwarerenderer\softwarerenderer\main.cpp(27): warning C4326: return type of 'main' should be 'int' instead of 'void'
+
+    1 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.75
