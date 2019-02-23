@@ -5,6 +5,8 @@
 #include <string>
 
 #include "Canvas.hpp"
+#include "Rasterizer.hpp"
+#include "MeshLoader.hpp"
 
 // ----------------
 // Globals
@@ -44,9 +46,17 @@ void main(int argc, char* argv[])
 	// Initialize Canvas
 	Canvas::Init(WIDTH, HEIGHT);
 
-	for(int i = 0; i < 800; ++i)
-		Canvas::Draw(i, 100, 0x00FFFF);
+	// Raster a triangle!
+	Rasterizer::RasterizeTriangle(420, 500, 50, 250, 300, 255, 650, 300, 128, true);
+	Rasterizer::RasterizeTriangle(400, 400, 50, 200, 200, 255, 600, 400, 255, false);
 	Canvas::Update();
+
+	// Load the 3D bunny
+	int num_vertices = 0;
+	std::vector<float> buffer = MeshLoader::LoadMesh("res/cube.obj", num_vertices);
+	assert(num_vertices > 0);
+
+	// Render the mesh
 
 	// 60 FPS loop
 	auto current_time = std::chrono::high_resolution_clock::now();

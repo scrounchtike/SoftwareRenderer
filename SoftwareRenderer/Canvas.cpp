@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <limits>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -154,6 +155,16 @@ void Init(unsigned int sizex, unsigned int sizey)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
 	stbi_image_free(raw_data);
+
+	// Initialize depth buffer to be all INF
+	float float_inf = std::numeric_limits<float>::infinity();
+	for (int i = 0; i < 800; ++i)
+	{
+		for (int j = 0; j < 800; ++j)
+		{
+			depth_buffer[i][j] = float_inf;
+		}
+	}
 }
 
 void Clear(Color color)
@@ -173,6 +184,21 @@ void Clear(Color color)
 void Draw(unsigned int x, unsigned int y, Color color)
 {
 	memcpy((void*)screen[y][x], &color, 3);
+}
+
+bool DrawIfNearer(unsigned int x, unsigned y, float z)
+{
+	// First, check the depth buffer to see current depth
+	if (depth_buffer[x][y] < z)
+		return false;
+	// New value is nearer
+	depth_buffer[x][y] = z;
+	return true;
+}
+
+void DrawDepth(unsigned int x, unsigned int y, float z)
+{
+	depth_buffer[x][y] = z;
 }
 
 void Update()
