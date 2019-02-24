@@ -35,6 +35,8 @@ void main(int argc, char* argv[])
 		assert(!"Failed to create a GLFW window!");
 	}
 
+	//glfwWindowHint;
+
 	window = glfwCreateWindow(800, 800, "Software Renderer", nullptr, nullptr);
 
 	// Make GL context current
